@@ -1,0 +1,24 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Kin,Lato Black,96,&H00FFFFFF&,&H66FFFFFF&,&H00101010&,&H80000000,0,0,0,0,100,100,0,0,1,6,0,5,80,80,160,1
+
+[Events]
+Format: Layer, Start, End, Style, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:01.06,Kin,,,,,{\an5\move(540,952,540,883,0,220)\fad(90,0)}First line.
+Dialogue: 0,0:00:01.06,0:00:02.17,Kin,,,,,{\an5\move(540,883,540,758,0,220)\alpha&H80&\fscx88\fscy88}First line.
+Dialogue: 0,0:00:01.06,0:00:02.17,Kin,,,,,{\an5\move(540,952,540,883,0,220)\fad(90,0)}Second line.
+Dialogue: 0,0:00:02.17,0:00:03.22,Kin,,,,,{\an5\move(540,758,540,633,0,220)\alpha&H80&\fscx88\fscy88}First line.
+Dialogue: 0,0:00:02.17,0:00:03.22,Kin,,,,,{\an5\move(540,883,540,758,0,220)\alpha&H80&\fscx88\fscy88}Second line.
+Dialogue: 0,0:00:02.17,0:00:03.22,Kin,,,,,{\an5\move(540,952,540,883,0,220)\fad(90,0)}Third line.
+Dialogue: 0,0:00:03.22,0:00:04.33,Kin,,,,,{\an5\move(540,633,540,508,0,220)\alpha&H80&\fscx88\fscy88}First line.
+Dialogue: 0,0:00:03.22,0:00:04.33,Kin,,,,,{\an5\move(540,758,540,633,0,220)\alpha&H80&\fscx88\fscy88}Second line.
+Dialogue: 0,0:00:03.22,0:00:04.33,Kin,,,,,{\an5\move(540,883,540,758,0,220)\alpha&H80&\fscx88\fscy88}Third line.
+Dialogue: 0,0:00:03.22,0:00:04.33,Kin,,,,,{\an5\move(540,952,540,883,0,220)\fad(90,0)}Fourth {\1c&H0000A5FF&\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}line{\1c&H00FFFFFF&\frz0}.

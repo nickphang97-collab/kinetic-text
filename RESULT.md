@@ -1,6 +1,6 @@
 # kinetic-text — build result
 
-Status: M0 and M1 green; structural style/render milestone next.
+Status: M0–M2 green; one-session scope limit reached, final wrap-up next.
 
 ## Preconditions
 
@@ -103,6 +103,49 @@ Style: Kin,Lato Black,96,&H00FFFFFF&,&H66FFFFFF&,&H00101010&,&H80000000,0,0,0,0,
 Dialogue: 0,0:00:00.40,0:00:02.23,Kin,,,,,{\\an5\\pos(540,883)\\fad(120,120)}You don't need permission
 TSC_CLEAN
 ```
+
+### M2 — four styles, emphasis emitter, and minimal MP4 render path
+
+The requested Fable seat was unavailable. A fresh independent same-family reviewer received the PRD’s exact Q1/Q2/Q3 prompts before implementation. It recommended narrow positioning as a deterministic local renderer for prewritten text, centred-only layouts for v0.1, fixed left/right ASS anchors only as an evidence-driven v2 option, and anchored-hybrid timing for coarse line/section sync rather than lyrics. These conclusions are reflected in `README.md`.
+
+The known M2/M3 drift was corrected by implementing the minimum silent MP4 render path needed by the M2 verifier. The full audio/temp lifecycle remains M3/V2.
+
+Final verifier: PASS. All test pipelines ran with `set -o pipefail` (the final combined runs used `set -euo pipefail`).
+
+```text
+(pass) M2 rendered-frame assertions > word-pop has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > slide-karaoke has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > typewriter has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > stack-build has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > word-pop mid-animation is smaller than settled and stays centred
+(pass) M2 rendered-frame assertions > typewriter reveal increases visible ink without centroid drift
+(pass) M2 rendered-frame assertions > karaoke and stack-build produce visible centred text
+
+ 44 pass
+ 0 fail
+ 92 expect() calls
+Ran 44 tests across 5 files. [16.45s]
+TSC_CLEAN
+
+word-pop:       1080 / 1920 / yuv420p / 30/1 / 54 frames
+slide-karaoke:  1080 / 1920 / yuv420p / 30/1 / 90 frames
+typewriter:     1080 / 1920 / yuv420p / 30/1 / 90 frames
+stack-build:    1080 / 1920 / yuv420p / 30/1 / 148 frames
+[Parsed_ssim_4] SSIM Y:0.947778 U:0.954241 V:0.959507 All:0.950810
+--audio: deferred to V2; this v0.1 build refuses to ignore it
+AUDIO_DEFER_EXIT=2
+```
+
+The SSIM comparison is cropped to the 1080×400 text band and explicitly converted to `yuv420p`, because PNG-to-PNG SSIM otherwise reports RGB channels rather than `SSIM Y` on this FFmpeg build. `0.947778` is safely below the `< 0.985` animation-difference discriminator.
+
+Visual frame review performed in-session:
+
+- `word-pop`: 45 ms is visibly smaller/fainter than 600 ms; both remain centred.
+- `slide-karaoke`: the 600 ms frame shows a genuine partial fill inside the first word, confirming `\kf` works; no `\k` fallback was needed.
+- `typewriter`: the prefix reveal and settled line are stable; emphasis remains orange.
+- `stack-build`: four stages remain horizontally centred; older lines shift upward and dim without sideways drift.
+
+Four committed sample MP4s exist in `samples/`; eight committed frame receipts exist in `captures/m2/`.
 
 ## Shipped
 

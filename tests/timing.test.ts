@@ -21,7 +21,7 @@ describe("anchored-hybrid timing", () => {
   });
 
   test("uses explicit starts and ends verbatim", () => {
-    const line = flatten("word-pop.md")[0];
+    const line = resolveTiming(parseDocument("[00:00.40-00:02.40] Anchored line.", "anchor.md")).blocks[0]?.lines[0];
     expect([line?.startMs, line?.endMs]).toEqual([400, 2400]);
   });
 

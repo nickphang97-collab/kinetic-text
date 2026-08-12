@@ -22,7 +22,7 @@ describe("parseDocument", () => {
   });
 
   test("parses explicit start/end anchors", () => {
-    const document = parseDocument(readFixture("word-pop.md"), "word-pop.md");
+    const document = parseDocument("[00:00.40-00:02.40] Anchored line.", "anchor.md");
     expect(document.blocks[0]?.lines[0]?.anchor).toEqual({ startMs: 400, endMs: 2400 });
   });
 

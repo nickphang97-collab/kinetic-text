@@ -1,0 +1,15 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Kin,Lato Black,96,&H00FFFFFF&,&H66FFFFFF&,&H00101010&,&H80000000,0,0,0,0,100,100,0,0,1,6,0,5,80,80,160,1
+
+[Events]
+Format: Layer, Start, End, Style, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.40,Kin,,,,,{\an5\pos(540,883)\q2}{\alpha&HFF&\t(0,1,\alpha&H00&)\1c&H0000A5FF&\t(70,140,\1c&H00FFFFFF&)\frz0}R{\alpha&HFF&\t(75,76,\alpha&H00&)\1c&H0000A5FF&\t(145,215,\1c&H00FFFFFF&)\frz0}e{\alpha&HFF&\t(150,151,\alpha&H00&)\1c&H0000A5FF&\t(220,290,\1c&H00FFFFFF&)\frz0}v{\alpha&HFF&\t(225,226,\alpha&H00&)\1c&H0000A5FF&\t(295,365,\1c&H00FFFFFF&)\frz0}e{\alpha&HFF&\t(300,301,\alpha&H00&)\1c&H0000A5FF&\t(370,440,\1c&H00FFFFFF&)\frz0}a{\alpha&HFF&\t(375,376,\alpha&H00&)\1c&H0000A5FF&\t(445,515,\1c&H00FFFFFF&)\frz0}l{\alpha&HFF&\t(450,451,\alpha&H00&)\1c&H0000A5FF&\t(520,590,\1c&H00FFFFFF&)\frz0} {\alpha&HFF&\t(525,526,\alpha&H00&)\1c&H0000A5FF&\t(595,665,\1c&H00FFFFFF&)\frz0}e{\alpha&HFF&\t(600,601,\alpha&H00&)\1c&H0000A5FF&\t(670,740,\1c&H00FFFFFF&)\frz0}a{\alpha&HFF&\t(675,676,\alpha&H00&)\1c&H0000A5FF&\t(745,815,\1c&H00FFFFFF&)\frz0}c{\alpha&HFF&\t(750,751,\alpha&H00&)\1c&H0000A5FF&\t(820,890,\1c&H00FFFFFF&)\frz0}h{\alpha&HFF&\t(825,826,\alpha&H00&)\1c&H0000A5FF&\t(895,965,\1c&H00FFFFFF&)\frz0} {\alpha&HFF&\t(900,901,\alpha&H00&)\1c&H0000A5FF&\t(970,1040,\1c&H0000A5FF&)\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}l{\alpha&HFF&\t(975,976,\alpha&H00&)\1c&H0000A5FF&\t(1045,1115,\1c&H0000A5FF&)\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}e{\alpha&HFF&\t(1050,1051,\alpha&H00&)\1c&H0000A5FF&\t(1120,1190,\1c&H0000A5FF&)\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}t{\alpha&HFF&\t(1125,1126,\alpha&H00&)\1c&H0000A5FF&\t(1195,1265,\1c&H0000A5FF&)\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}t{\alpha&HFF&\t(1200,1201,\alpha&H00&)\1c&H0000A5FF&\t(1270,1340,\1c&H0000A5FF&)\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}e{\alpha&HFF&\t(1275,1276,\alpha&H00&)\1c&H0000A5FF&\t(1345,1415,\1c&H0000A5FF&)\frz-3\t(0,110,\frz3)\t(110,220,\frz0)}r{\alpha&HFF&\t(1350,1351,\alpha&H00&)\1c&H0000A5FF&\t(1420,1490,\1c&H00FFFFFF&)\frz0} {\alpha&HFF&\t(1425,1426,\alpha&H00&)\1c&H0000A5FF&\t(1495,1565,\1c&H00FFFFFF&)\frz0}o{\alpha&HFF&\t(1500,1501,\alpha&H00&)\1c&H0000A5FF&\t(1570,1640,\1c&H00FFFFFF&)\frz0}n{\alpha&HFF&\t(1575,1576,\alpha&H00&)\1c&H0000A5FF&\t(1645,1715,\1c&H00FFFFFF&)\frz0}c{\alpha&HFF&\t(1650,1651,\alpha&H00&)\1c&H0000A5FF&\t(1720,1790,\1c&H00FFFFFF&)\frz0}e{\alpha&HFF&\t(1725,1726,\alpha&H00&)\1c&H0000A5FF&\t(1795,1865,\1c&H00FFFFFF&)\frz0}.

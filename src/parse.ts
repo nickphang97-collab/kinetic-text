@@ -36,6 +36,13 @@ export interface ParsedDocument {
   readonly blocks: readonly ParsedBlock[];
 }
 
+export interface ParseDefaults {
+  readonly style?: StyleName;
+  readonly theme?: ThemeName;
+  readonly font?: string;
+  readonly wpm?: number;
+}
+
 function isStyleName(value: string): value is StyleName {
   return STYLE_NAMES.some((name) => name === value);
 }
@@ -109,13 +116,15 @@ function parseContentLine(raw: string, source: string, sourceLine: number): Pars
   return { sourceLine, text, segments, anchor: { startMs, endMs } };
 }
 
-export function parseDocument(text: string, source: string): ParsedDocument {
+export function parseDocument(text: string, source: string, defaults: ParseDefaults = {}): ParsedDocument {
   assertScriptLimits(text, source);
   const lines = text.split(/\r?\n/);
-  let style: StyleName = "word-pop";
-  let theme: ThemeName = "midnight";
-  let font = "Lato Black";
-  let wpm = 150;
+  let style: StyleName = defaults.style ?? "word-pop";
+  let theme: ThemeName = defaults.theme ?? "midnight";
+  let font = defaults.font ?? "Lato Black";
+  let wpm = defaults.wpm ?? 150;
+  if (font === "") throw new InputError(`${source}: font cannot be empty`);
+  if (!Number.isFinite(wpm) || wpm <= 0) throw new InputError(`${source}: wpm must be a positive number`);
   let cursor = 0;
 
   if (lines[0] === "---") {
