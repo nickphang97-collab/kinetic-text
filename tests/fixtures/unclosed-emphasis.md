@@ -1,0 +1,1 @@
+This *span never closes.

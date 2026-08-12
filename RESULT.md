@@ -1,6 +1,6 @@
 # kinetic-text — build result
 
-Status: M0 green; parser/timing implementation next.
+Status: M0 and M1 green; structural style/render milestone next.
 
 ## Preconditions
 
@@ -64,6 +64,43 @@ EXIT=3
  0 fail
  10 expect() calls
 Ran 10 tests across 1 file. [17.00ms]
+TSC_CLEAN
+```
+
+### M1 — parser and anchored-hybrid timing
+
+The red-first verifier discriminated against always-success stubs:
+
+```text
+0 pass
+20 fail
+21 expect() calls
+Ran 20 tests across 2 files. [30.00ms]
+RED_STUB_EXIT=1
+```
+
+Final verifier: PASS. One initially incorrect test constant was corrected from `0.70s` to the PRD-derived `1.84s` (`450 + 55×29 - 200 = 1845 ms`) without changing the branch under test.
+
+```text
+(pass) parseDocument > honours escaped asterisks and brackets
+(pass) parseDocument > preserves ASS-looking text literally for the emitter to escape
+(pass) parseDocument > rejects broken fixture unknown-front-matter.md
+(pass) parseDocument > rejects broken fixture two-emphasis.md
+(pass) parseDocument > rejects broken fixture unclosed-emphasis.md
+(pass) parseDocument > rejects unknown directives and reports the line
+(pass) parseDocument > rejects invalid style values
+
+ 21 pass
+ 0 fail
+ 35 expect() calls
+Ran 21 tests across 2 files. [54.00ms]
+WROTE out/demo.vertical.ass
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+Style: Kin,Lato Black,96,&H00FFFFFF&,&H66FFFFFF&,&H00101010&,&H80000000,0,0,0,0,100,100,0,0,1,6,0,5,80,80,160,1
+Dialogue: 0,0:00:00.40,0:00:02.23,Kin,,,,,{\\an5\\pos(540,883)\\fad(120,120)}You don't need permission
 TSC_CLEAN
 ```
 
