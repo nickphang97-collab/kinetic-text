@@ -1,6 +1,6 @@
 # kinetic-text — build result
 
-Status: M0–M2 green; one-session scope limit reached, final wrap-up next.
+Status: verified v0.1 core shipped through M2; M3–M5 deferred by the one-session scope limit.
 
 ## Preconditions
 
@@ -149,12 +149,64 @@ Four committed sample MP4s exist in `samples/`; eight committed frame receipts e
 
 ## Shipped
 
-Pending.
+- A Bun/TypeScript CLI with `probe`, ASS-only output, and silent MP4 rendering to deterministic vertical or horizontal 30 fps H.264/yuv420p containers.
+- Fail-loud environment/font checks with pinned vendored Lato files and exit codes 2/3/4.
+- The locked Markdown-adjacent parser and anchored-hybrid timing model, including every authored grammar/timing error fixture and red-first discrimination evidence.
+- The four locked libass styles plus cross-cutting emphasis, with one positioned event per scale-animated unit.
+- Cropped-band SSIM and decoded-frame assertions with perceptual tolerances, never hashes.
+- Four committed sample videos: `samples/word-pop.vertical.mp4`, `samples/slide-karaoke.vertical.mp4`, `samples/typewriter.vertical.mp4`, and `samples/stack-build.vertical.mp4`.
+- Eight committed visual receipts in `captures/m2/`, visually inspected in-session.
+- Narrow, honest usage documentation and review provenance in `README.md`.
+
+Final full-suite rerun after scope freeze: PASS.
+
+```text
+(pass) M2 rendered-frame assertions > word-pop has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > slide-karaoke has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > typewriter has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > stack-build has deterministic vertical container properties
+(pass) M2 rendered-frame assertions > word-pop mid-animation is smaller than settled and stays centred
+(pass) M2 rendered-frame assertions > typewriter reveal increases visible ink without centroid drift
+(pass) M2 rendered-frame assertions > karaoke and stack-build produce visible centred text
+
+ 44 pass
+ 0 fail
+ 92 expect() calls
+Ran 44 tests across 5 files. [8.70s]
+TSC_CLEAN
+PASS libx264: present
+PASS aac: present
+PASS ffprobe: ffprobe version 7.0.2-static
+PASS Lato Black: Lato-Black.ttf md5 1233fdf19c04333c7f58af4eb8698452
+PASS Lato Regular: Lato-Regular.ttf md5 3b9b99039cc0a98dd50c3cbfac57ccb2
+word-pop sample:      1080,1920,yuv420p,30/1,54
+slide-karaoke sample: 1080,1920,yuv420p,30/1,90
+typewriter sample:    1080,1920,yuv420p,30/1,90
+stack-build sample:   1080,1920,yuv420p,30/1,148
+DIFF_CHECK_CLEAN
+```
 
 ## Deferred to V2
 
-Pending.
+See `V2.md`. M3 is the audio/temp/error-path render pipeline; M4 follows M3 and adds the full tolerant golden/mutation harness; M5 covers acceptance viewing, the ten-script metric, theme sweep, leak/cleanup audit, and operator review. M4 is explicitly sequenced after M2/M3 because its goldens require those renders.
 
 ## Needs-you
 
-Pending final human gates.
+1. Watch the four `samples/*.mp4` files and decide whether the centred-only visual ceiling is useful for real work. The in-session review is evidence, not a claim that a human watched them.
+2. Decide later whether to run M3–M5 from `V2.md`; audio is currently rejected loudly, not silently ignored.
+3. Fable was unavailable; the documented independent same-family structural review was used under the PRD fallback.
+
+Human gates, printed only and never run:
+
+```bash
+# Public git push — replace <url>, then run manually.
+cd /home/edward-phang/work/projects/oss/kinetic-text && git remote add origin <url> && git push -u origin main
+
+# npm publish — separate decision/session; do not run for this private v0.1 automatically.
+cd /home/edward-phang/work/projects/oss/kinetic-text && npm publish
+
+# Optional extra font; not needed by the vendored default.
+sudo apt install fonts-league-spartan && fc-cache -f && fc-match -f '%{family}\n' "League Spartan"
+```
+
+Billable calls: none exist and none were made.
