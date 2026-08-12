@@ -1,6 +1,6 @@
 # kinetic-text — build result
 
-Status: preconditions green; implementation not started.
+Status: M0 green; parser/timing implementation next.
 
 ## Preconditions
 
@@ -40,7 +40,32 @@ All load-bearing values match the PRD. `drawtext` is absent as expected; libass 
 
 ## Checkpoints
 
-No milestone checkpoints yet.
+### M0 — scaffold, vendored fonts, fail-loud preflight
+
+Verifier: PASS.
+
+```text
+1233fdf19c04333c7f58af4eb8698452  assets/fonts/Lato-Black.ttf
+3b9b99039cc0a98dd50c3cbfac57ccb2  assets/fonts/Lato-Regular.ttf
+PASS ass filter: present
+PASS ssim filter: present
+INFO drawtext: absent (expected, libass path in use)
+PASS libx264: present
+PASS aac: present
+PASS requested font: Lato Black: vendored Lato-Black.ttf md5 1233fdf19c04333c7f58af4eb8698452
+EXIT=0
+Impact: requested font unavailable; fontconfig substituted Noto Sans. Installing a font is the operator's call: sudo apt install fonts-league-spartan && fc-cache -f
+EXIT=3
+(pass) input limits > rejects relative path traversal
+(pass) escaping > escapes filter parser metacharacters without touching spaces
+(pass) escaping > escapes ASS override delimiters
+
+ 10 pass
+ 0 fail
+ 10 expect() calls
+Ran 10 tests across 1 file. [17.00ms]
+TSC_CLEAN
+```
 
 ## Shipped
 

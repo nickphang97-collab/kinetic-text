@@ -1,0 +1,17 @@
+{
+  "name": "kinetic-text",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "kinetic-text": "src/cli.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}
